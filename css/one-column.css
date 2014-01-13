@@ -1,0 +1,32 @@
+.threadContainer{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+.threadImage{
+	float: left;
+	margin: 1em;
+	margin-top: 0;
+	width: 38%;
+	border-radius: 4px;
+	border:#dfdfdf solid 1px;
+}
+.threadOpPost{
+	float: left;
+	margin-left: 0;
+	padding: 0;
+	margin-bottom: 0;
+	border-radius:0em;
+	border-bottom-width: 1px;
+	width: 100%;
+}
+.threadContainer>.threadOpPost:first-child{
+	border-top-width:1px;
+	border-radius: 4px; 
+}
+.threadOpPost>div>p{
+	margin-top: 1em;
+}

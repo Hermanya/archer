@@ -1,0 +1,293 @@
+body{
+	font-family: arial;
+	margin:0;
+	padding:0;
+	background-color: #eee;
+	color:#1E2128;
+}
+.hiddenText{
+	background-color: #1E2128;
+}
+.hiddenText:hover{
+	background-color: rgba(0,0,0,0);
+}
+.linedText{
+	text-decoration: line-through;
+}
+.answer{
+	color: #C60751;
+}
+.quot{
+	color: #677E52;
+}
+a{
+	color:#3DA1CC;
+
+}
+.formOutterContainer {
+	width: 100%;
+}
+nav{
+	background-color: #41A38B;
+	border-bottom: 1px solid #fcfcfcfcfcfc;
+	overflow: auto;
+	padding-right: 1em;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+nav > a, nav > a:visited,nav > a:active{
+	color:#dfdfdf;
+	display: inline-block;
+	padding: 0.7em;
+	float: right;
+	font-weight: bold;
+	font-size: 0.9em;
+	border-top: 1px solid rgba(0,0,0,0);
+	margin-left: 1em;
+	
+}
+.searchElement>button{
+	border-radius: 1em;
+}
+	
+nav > a:hover {
+	text-decoration:none;
+	cursor:pointer;
+	color: #fdfdfd;
+	border-top: 1px solid #B2FFEC;
+}
+.important{
+	background-color: #8CBEB2;
+	border-bottom: #8CBEB2 1px solid;
+}
+.active{
+	color:#1E2128;
+}
+.importantButton{
+	background-color: #ABD6C3;
+}
+.metaContainer{
+  	background-color: #e5e5e5;
+	overflow: auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+  	border-right: 1px solid #ddd;
+  	border-left: 1px solid #ddd;
+  	position: relative;
+}
+
+.container{
+  	background-color: #e5e5e5;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+  	border-right: 1px solid #ddd;
+  	border-left: 1px solid #ddd;
+  	position: relative;
+}
+.container >h1, .container>p,.container>h3{
+	margin-left: 5em;
+	margin-right: 5em;
+}
+.threadContainer{
+	overflow: auto;
+	float: left;
+  	width: 100%;
+}
+.post{
+  	background-color: #eee;
+  	width: 90%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	padding: 1em;
+  	margin-bottom: 2%;
+  	overflow:auto;
+  	border: 1px solid #ddd;
+  	border-bottom-width: 2px;
+	border-radius: 0.3em;
+	position: relative;
+}
+.threadOpPost{
+  	background-color: #eee;
+  	width: 98%;
+  	float: left;
+  	margin-left: 1%;
+  	padding: 0;
+  	margin-bottom: 1%;
+  	border-radius:0.3em;
+  	border: 1px solid #ddd;
+	border-bottom-width: 3px;
+	border-top-width: 0;
+	text-decoration: none;
+	position: relative;
+}
+.threadOpPost:visited,.threadOpPost:active,.threadOpPost:hover,.threadOpPost:link{
+	color:#1E2128;
+	text-decoration: none;
+}
+.threadOpPost > div > p{
+	margin: 1em;
+	padding: 0;
+	cursor:pointer;
+	color:#1E2128;
+}
+.threadOpPost > div > span{
+	margin: 1em;
+}
+.post > p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.threadImage{
+	width: 100%;
+	max-height: 200%;
+	border-top-left-radius:0.3em;
+	border-top-right-radius:0.3em;
+}
+.postImage{
+	width: 32%;
+	max-height: 100%;
+	border-radius:0.3em;
+	float: left;
+	margin-bottom: 1.5em;
+	margin-right: 1.5em;
+}
+.postAnswersNumber{
+	display: none;
+	/*cursor: pointer;
+	float: right;
+	color: #8DC8B9;
+	margin-left: 1em;*/
+}
+.postAnswerLink{
+	float: left;
+	margin-left:0.5em;
+}
+.newThreadForm,#answerForm{
+	border-right: 1px solid #ddd;
+  	border-left: 1px solid #ddd;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	background-color: #e5e5e5;
+	position: relative;
+}
+form > button{
+	float: right;
+}
+
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+   width: 100%;
+   border: solid #ddd 1px;
+   border-radius: 4px;
+   margin-bottom: 1em;
+   margin-top: 1em;
+   padding: 1em;
+   background-color: #eee;
+}
+form>input{
+	max-width: 60%;
+}
+.postAnswers{
+	display: none;
+	font-size: 0.9em;
+	margin: 1em;
+}
+
+.postId{
+}
+.nextPage{
+	position: fixed;
+	right: 0;
+	bottom:0;
+	width: 50%;
+	height: 2em;
+	font-size: 3em;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 0.5em;
+	top: initial;
+	display: none;
+}
+.previousPage, .backToThreads{
+	position: fixed;
+	left: 0;
+	bottom:0;
+	width: 50%;
+	height: 2em;
+	font-size: 3em;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 0.5em;
+	top: initial;
+	display: none;
+}
+
+.nextPage>span{
+	position: static;
+	top: initial;
+}
+#logo{
+	margin: 0.1em;
+	height: 2.4em;
+	margin-left: 1em;
+}
+.currentPage{
+	background-color: #46A891;
+}
+.markupButton{
+	float: right;
+}
+.buttonPanel > a {
+	background: #eee;
+	padding: 0.1em;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	margin-left: 0.3em;
+	border: solid #aaa 1px;
+	color: black;
+	display: inline-block;
+}
+.leftToBottomLink,.rightToBottomLink{
+/*	position:fixed;
+	top: 1.05em;
+	bottom: 1.05em;
+	width: 7%;
+	text-align: center;
+	font-size: 2.5em;*/
+	display: none;
+}
+/*
+.rightToBottomLink{
+	right: 15%;
+}
+.leftToBottomLink{
+	left: 15%;
+}
+.rightToBottomLink > span, .leftToBottomLink > span {
+}
+.rightToBottomLink > span{
+	position:absolute;
+	left:0; 
+	right:0;
+	margin:auto;
+	height: 1em;
+}
+.leftToBottomLink > span {
+	position: fixed;
+	top: 88%;
+	left: 17.3%;
+}
+.backToThreads:hover,.nextPage:hover,.previousPage:hover,.leftToBottomLink:hover,.rightToBottomLink:hover{
+	background-color: rgba(171,214,195,0.1);
+}
+*/

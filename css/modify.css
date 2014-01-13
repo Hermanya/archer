@@ -1,0 +1,57 @@
+
+.existingTag{
+	margin: 0.7em;
+	display: inline-block;
+	padding: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	/*border: 1px solid #fcfcfcfcfcfc;*/
+  background-color: #eee;
+	cursor:pointer;
+    -webkit-animation: move 45s infinite; /* Safari 4+ */
+  	-moz-animation:    move 45s infinite; /* Fx 5+ */
+  	-o-animation:      move 45s infinite; /* Opera 12+ */
+  	animation:         move 45s infinite; /* IE 10+ */
+  	border-radius: 1em;
+}
+.existingTag:hover{
+	background-color: #D9EDDE;
+	color:#1E2128;
+}
+#existingTagContainer{
+  height: 16em;
+  overflow-y: hidden;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: solid 2px #E6E6E8;
+}
+#existingTagContainer:hover{
+  overflow-y: scroll;
+}
+#existingTagContainer:hover > .existingTag{
+  -webkit-animation: none; /* Safari 4+ */
+    -moz-animation:    none; /* Fx 5+ */
+    -o-animation:      none; /* Opera 12+ */
+    animation:         none; 
+}
+@-webkit-keyframes move {
+  0%   { -webkit-transform: translateY(0em);}
+  50% { -webkit-transform: translateY(-12em);}
+  100% { -webkit-transform: translateY(0em);}
+}
+@-moz-keyframes move {
+  0%   { -moz-transform: translateY(0em);}
+  50% { -moz-transform: translateY(-12em);}
+  100% { -moz-transform: translateY(0em);}
+}
+@-o-keyframes move {
+  0%   { -o-transform: translateY(0em);}
+  50% { -o-transform: translateY(-12em);}
+  100% { -o-transform: translateY(0em);}
+}
+@keyframes appear move {
+  0%   { transform: translateY(0em);}
+  50% { transform: translateY(-12em);}
+  100% { transform: translateY(0em);}
+}

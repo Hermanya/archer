@@ -1,0 +1,12 @@
+<?php
+	$db_username = "871809_twach";
+	$db_password = "YPeZSIak5M%V";
+	$dsn = "mysql:host=mysql51-113.wc1.ord1.stabletransit.com;dbname=871809_1;charset=utf8";
+	try{
+		$pdo = new PDO($dsn, $db_username, $db_password);
+	} catch (PDOException $e) {
+		echo 'Connection failed: ' . $e->getMessage();
+		exit();
+	}
+	$pdo->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+?>

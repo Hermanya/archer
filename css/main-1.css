@@ -1,0 +1,46 @@
+body{
+	font-family: tahoma;
+	background-image: url("../images/brick.png");
+	background-size: 8%;
+	color:#1E2128;
+}
+
+.metaContainer,.threadFooter,.formOutterContainer{
+  	border-right: 1px solid #A27162;
+	border-left: 1px solid #A27162;
+	background-image: url(../images/brick.png);
+	box-shadow: 0px 0px 150px;
+	background-size: 21%;
+	border-top: 1px solid #A27162;
+}
+
+.container{
+
+  	border-right: 1px solid #E6E6E8;
+  	border-left: 1px solid #E6E6E8;
+}
+
+.post,.formContainer{
+
+  	border: 1px solid #E6E6E8;
+
+}
+.threadOpPost{
+  	
+  	border: 1px solid #A39591;
+
+}
+
+.newThreadForm,#answerForm{
+	background-image: url(../images/brick.png);
+	background-size: 18%;
+	box-shadow: 0px 0px 150px;
+	border-right: 1px solid #A27162;
+	border-left: 1px solid #A27162;
+}
+
+
+.backToThreads,.nextPage,.previousPage,.rightToBottomLink,.leftToBottomLink{
+	text-shadow: 0px 0px 20px black;
+	color: whitesmoke;
+}
