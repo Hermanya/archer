@@ -3,6 +3,8 @@ var existingTags=document.getElementsByClassName("existingTag");
 	Add a tag element to Your tags 
 */
  function addTagElement(tag){
+	if (tag.length==0)
+		return false;
  	var keywordInputs = document.getElementsByClassName("tagSpan");
 	for (var i = keywordInputs.length - 1; i >= 0; i--) {
 		if (tag==keywordInputs[i].innerHTML)

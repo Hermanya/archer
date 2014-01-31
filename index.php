@@ -5,7 +5,7 @@
 	<script>
 		if(navigator.cookieEnabled)
 	  {
-		 if(document.cookie.split("=").length>2)
+		 if(document.cookie.split("=").length>1)
 		 	document.location.href = "threads.php?offset=0";
 	  }
 	else
@@ -25,12 +25,12 @@
 	<link type="text/css" rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<nav>
-	<span id="welcomeMessage">Welcome to a non-hierarchical anonymous forum!</span>
+<nav class="topNav">
+	<span id="welcomeMessage">Welcome to an anonymous forum!</span>
 </nav>
 <div class="container">
-<iframe src="//player.vimeo.com/video/79016440?title=0&amp;byline=0&amp;portrait=0&amp;color=41a38b&amp;autoplay=0" class="welcomeVideo" width="809" height="455" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<h1 id="interests">What are You interested in?</h1>
+<iframe src="//player.vimeo.com/video/79016440?title=0&amp;byline=0&amp;portrait=0&amp;color=41a38b&amp;autoplay=0" class="welcomeVideo" width="837" height="470" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<h2 id="interests">What are you interested in?</h2>
 <div class="tagContainer">
 	<div class ="addTagElement">
 		<input type="text" id="myTagInput" />

@@ -17,26 +17,24 @@
 					break;	
 			}
 			switch($_COOKIE["layout"]){
-				case 1:
-					echo '<link type="text/css" rel="stylesheet" href="css/three-columns.css">';
-					break;
-				case 2:
+				case 0:
 					echo '<link type="text/css" rel="stylesheet" href="css/one-column.css">';
 					break;	
 			}		
 		?>
-		<link rel='stylesheet' media='screen and (max-width: 970px)' href='css/main-mobile.css' />
+		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 	</head>
 	<body>
-	<nav>
+	<nav class="topNav">
 		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
-					<a href="#" id="settingsButton" onmouseover="this.querySelector('ul').style.display='block';" onmouseout="this.querySelector('ul').style.display='none';">
+					<a href="#" id="settingsButton" >
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 				<ul class="settingsPanel">
 				<li  id="layoutButton"><span class="glyphicon glyphicon-th"> </span>  layout</li>
 				<li id="changeStyleButton"><span class="glyphicon glyphicon-adjust"></span> style</li>
 				</ul></a>
 		<a href="modifyTags.php"><span class="glyphicon glyphicon-tags"> </span>  tags</a>
+		<!--a href="fundamentals.php"><span class="glyphicon glyphicon-question-sign"></span> fundamentals</a>
 		<a href="donate.php"><span class="glyphicon glyphicon-wrench"></span> complain</a-->
 		<a href="threads.php"><span class="glyphicon glyphicon-th-large"></span> threads</a>
 		<form action="search.php" method="get" class="searchElement">
@@ -44,8 +42,22 @@
 					<button><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 	</nav>
+
+	<!--form action="php/newThread.php" method="POST" id="newThreadForm" enctype="multipart/form-data">
+		<div class="buttonPanel">
+			<a class="markupButton" id="bold" href="#answerForm"><b>b</b></a>
+			<a class="markupButton" id="italics" href="#answerForm"><em>i</em></a>
+			<a class="markupButton" id="lined" href="#answerForm"><span class="linedText">l</span></a>
+			<a class="markupButton" id="hidden" href="#answerForm"><span class="hiddenText">h</span></a>
+			<a class="markupButton" id="quot" href="#answerForm"><span class="quot">&gt;</span></a>
+		</div>
+		<textarea name="post_text" rows="4" cols="57" placeholder="#Tag this post, otherwise nobody will ever read it!" required></textarea>
+		<input type="file" name="post_pic" required>
+		<button type="submit">Post</button>
+	</form-->
 	<div class="metaContainer">
-	<div class="threadContainer" ><div class="tagContainer threadOpPost">
+	<aside class="sideBar">
+		<div class="tagContainer">
 			<h3 id="interests">Excluding:</h3>
 			<div class ="addTagElement">
 				<input type="text" id="myTagInput" />
@@ -53,29 +65,33 @@
 				<button id="proceed" ><span class="glyphicon glyphicon-ok"></span></button>
 			</div>
 			<br>
-		</div></div>
+		</div>
+	</aside>
+	<div class="threadContainer" >
+		</div>
 	<?
 		switch($_COOKIE["layout"]){
 				case 1:
 					echo '<div class="threadContainer" ></div>';
 					echo '<div class="threadContainer" ></div>';
 					break;
-				case 2:
-					break;
 				default:
-					echo '<div class="threadContainer" ></div>';
+					break;
 			}		
 		?>
 
 	</div>
-	<footer class="threadFooter">
+	<footer class="threadsFooter">
 		<button class="pastThreadsButton">past</button>
 	</footer>
 	<script src="js/style.js"></script>
 	<script src="js/layout.js"></script>
 	<script src="js/discovery.js"></script>
 	<script src="js/createThreadPreviewElement.js"></script>
-	<script src="js/replaceMarkup.js"></script>
+	<script src="js/replaceMarkupThreadPreview.js"></script>
+	<script src="js/settingsButton.js"></script>
+	<script src="js/sideBarFix.js"></script>
+
 	<script>
 		var rehttp=new XMLHttpRequest(), numberOfNewPosts=0;
 		rehttp.onreadystatechange=function()

@@ -19,7 +19,6 @@ user-select: none;
   margin-right: auto;
   display: block;
   width: 17em;
-  font-size: 1.5em;
   margin-bottom: 0.5em;
   max-width: 100%;
 }
@@ -30,7 +29,6 @@ user-select: none;
   margin-left: 1em;
   background-color: #8DC89C;
   display: inline-block;
-  padding: 0.3em;
   border-radius: 2em;
   padding-left: 1em;
   margin-bottom: 1em;
@@ -47,11 +45,11 @@ user-select: none;
   width: 97%;
   text-shadow: 0px -1px 1px #fdfdfd;
 }
-nav{
+.topNav{
   
 }
 /*
-nav>span{
+.topNav>span{
   padding: 0.2em;
   font-size: 1.6em;
   color: #5C4B51;
@@ -63,15 +61,11 @@ nav>span{
   border: solid #DEDAF5 1px;
   cursor:pointer;
   margin-left: 0.5em;
-  width: 1.7em;
-  height: 1.7em;
-  border-radius: 1em;
+  border-radius: 2em;
 }
 
 #plusButton,#proceed{
   margin-left: -2em;
-  width: 1.8em;
-  height: 1.8em;
   background-color: #3DA1CC;
   color: #fdfdfd;
   border-bottom-left-radius: 0;
@@ -82,20 +76,22 @@ nav>span{
   margin-left: 0;
   border-radius: 2em;
 }
-button:hover,#plusButton:hover,#proceed:hover{
-  background-color: #ddd;
+button:hover{
+  background-color: #FFFFFF;
+  border: solid  #E6E6E8 1px;
+}
+#plusButton:hover,#proceed:hover{
+  background-color: #4Db1dE;
   border: solid  #E6E6E8 1px;
 }
 input{
   border: solid #E6E6E8 1px;
   border-radius: 2em;
   max-width: 10em;
-  font-size: 0.9em;
-  margin-left: 2em;
-  padding: 0.25em;
-  padding-left: 1em;
-  padding-right: 2em;
   width: 55%;
+}
+input:focus{
+  background-color: #f6f6f6;
 }
 input[name=tag]{
   font-size: 1.1em;
@@ -123,5 +119,7 @@ footer{
   margin-top: 1em;
 }
 .threadContainer > .tagContainer{
-  width:100%;
+  width: 95%;
+  float: left;
+  margin-left: 4%;
 }

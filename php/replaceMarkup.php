@@ -19,7 +19,7 @@ function replaceMarkup($string) {
 	$string = preg_replace('#\-{2}(.*?)\-{2}#', "<span class=\"linedText\">$1</span> ", $string);
 	$string = preg_replace('#\[l\](.*?)\[/l\]#', "<span class=\"linedText\">$1</span> ", $string);
 	//	$string = preg_replace_callback('/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/', function($arr)
-		$string = preg_replace_callback('#(?:https?://\S+)|(?:www.\S+)#', function($arr)  |(?:\S+\.\S+)
+		$string = preg_replace_callback('#(?:https?://\S+)|(?:www.\S+)#', function($arr)
 {
     if(strpos($arr[0], 'http://') !== 0 && strpos($arr[0], 'https://') !== 0)
     {

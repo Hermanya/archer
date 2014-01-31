@@ -309,14 +309,6 @@ function createPostElement(postObject){
 		var element;
 		switch(postObject.attachmentType){
 			case 1:
-			//var aElement = document.createElement("a");
-			//aElement.setAttribute("href","php/viewImage.php?thread_id="+threadId+"&post_id="+postObject.id);
-			/*
-			element = document.createElement("img");
-			element.setAttribute("class","postImage");
-			element.setAttribute("src","content/"+threadId+"/resized/"+postObject.id);
-			//aElement.appendChild(element);
-			divPost.appendChild(element);*/
 			element = document.createElement("div");
 			element.style.background="url('content/"+threadId+"/resized/"+postObject.id+"') 50% 50% no-repeat";
 			element.setAttribute("class","postImage");
@@ -395,7 +387,8 @@ function createPostElement(postObject){
 		element = document.createElement("div");
 		element.setAttribute("class","postAnswers");
 		divPost.appendChild(element);
-		document.getElementsByClassName('metaContainer')[0].appendChild(divPost);
+		var form = document.getElementsByClassName("formOutterContainer")[0];
+		document.getElementsByClassName('metaContainer')[0].insertBefore(divPost,form);
 		if ( 'ontouchstart' in window || 'onmsgesture'in window){
 			var hiddenText = divPost.getElementsByClassName("hiddenText");
 			for (var i = hiddenText.length - 1; i >= 0; i--) {

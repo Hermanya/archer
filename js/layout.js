@@ -14,11 +14,11 @@ document.getElementById("layoutButton").addEventListener("click",function(){
 	}else{
 		switch (cookie.layout){
 			case "1":
-				document.cookie = "layout=2; expires=" + date +"; path= /";
-				break;
-			case "2":
 				document.cookie = "layout=0; expires=" + date +"; path= /";
 				break;
+		/*	case "2":
+				document.cookie = "layout=0; expires=" + date +"; path= /";
+				break;*/
 			default:
 				document.cookie = "layout=1; expires=" + date +"; path= /";
 				break;

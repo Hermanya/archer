@@ -1,7 +1,10 @@
 body{
 	font-family: tahoma;
-	background-color: #262626;
+	background-color: #1b1b1b;
   color:#eee;
+  background-image: url('../images/background-image-dark.jpg');
+  background-size: 300px;
+  background-repeat: repeat-x;
 }
 button,input{
   border: solid 1px #202020;
@@ -19,7 +22,7 @@ button,input{
 	background-color: #eee;
   color:#eee !important;
 }
-nav{
+.topNav{
   	border-bottom: 1px solid #202020;
     background-color: #01634B;
 }
@@ -29,12 +32,12 @@ background-color: #066851;
 .metaContainer,.threadFooter,.formOutterContainer{
   	border-right: 1px solid #202020;
 	border-left: 1px solid #202020;
-	background-color: #222;
+	background-color: rgba(32,32,32,0.6);
 	background-size: 21%;
 	border-top: 1px solid #202020;
 }
 
-.container{
+.container,.popularTagsPanel{
 	background-color: #222;
   	border-right: 1px solid #202020;
   	border-left: 1px solid #202020;
@@ -49,14 +52,11 @@ background-color: #066851;
   	background-color: #262626;
   	border: 1px solid #202020;
 }
-
+.threadOpPost:hover{
+  background-color: #323232;
+}
 .threadOpPost > div > p{
 	color:#eee;
-}
-.newThreadForm,#answerForm{
-	background-color: #222;
-	border-right: 1px solid #202020;
-  	border-left: 1px solid #202020;
 }
 textarea{
 	border: 1px solid #202020;
@@ -85,13 +85,13 @@ textarea:focus{
 .expandedPost+.post{
   border-color: #202020;
 }
-.leftToBottomLink,.rightToBottomLink,.nextPage,.backToThreads{
+.threadNav>a,.backToThreads{
   color:#222;
-  }
-  .nextPage{
-    color:#262626;
   }
   .answersToContainer>div,.answersFromContainer>div{
   font-size: 0.8em;
   background-color: #202026;
+}
+.postImage,.threadImage{
+  border: solid 1px #202020;
 }

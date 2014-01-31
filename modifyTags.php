@@ -18,10 +18,10 @@
 	?>
 	<link type="text/css" rel="stylesheet" href="css/index.css">
 	<link type="text/css" rel="stylesheet" href="css/modify.css">
-	<link rel='stylesheet' media='screen and (max-width: 970px)' href='css/main-mobile.css' />
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 </head>
 <body>
-<nav>
+<nav class="topNav">
 	<span id="welcomeMessage">What are You interested in?:</span>
 </nav>
 <div class="container">

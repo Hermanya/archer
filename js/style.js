@@ -13,14 +13,11 @@ document.getElementById("changeStyleButton").addEventListener("click",function()
       	document.cookie = "style=2; expires=" + date +"; path= /";
 	}else{
 		switch (cookie.style){
-			case "1":
-				document.cookie = "style=0; expires=" + date +"; path= /";
-				break;
 			case "0":
 				document.cookie = "style=2; expires=" + date +"; path= /";
 				break;
 			default:
-				document.cookie = "style=1; expires=" + date +"; path= /";
+				document.cookie = "style=0; expires=" + date +"; path= /";
 				break;
 		}
 	}

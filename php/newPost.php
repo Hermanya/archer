@@ -1,9 +1,12 @@
 <?php 
 require "../../conf.php";
-require "./replaceMarkup.php";
+require "MyDateTime.php";
+//require "./replaceMarkup.php";
 if ((! empty($_POST['post_text'])&&is_string($_POST['post_text']))||
 	(! empty($_POST['attachment'])&&is_string($_POST['attachment']))){
-		$text=nl2br(htmlentities($_POST['attachment'].$_POST['post_text'], ENT_QUOTES, 'UTF-8'),false);
+		$text=preg_replace("/\r\n|\n|\r/", 
+											"<br>",
+											htmlentities($_POST['attachment'].$_POST['post_text'], ENT_QUOTES, 'UTF-8'));
 }else{
 	$text= " ";
 }
@@ -137,7 +140,7 @@ if ($row["Number of posts"]>500){
 	    	}
 	}
 
-	$date = new DateTime();
+	$date = new MyDateTime();
 	if(! isset($_POST["sage"])){
 	$mysql_command="UPDATE `thread` SET `last_update`=".($date->getTimestamp())." WHERE `thread_id`=?;";
 	$stmt=$pdo->prepare($mysql_command);

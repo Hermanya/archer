@@ -1,12 +1,13 @@
 
 .existingTag{
-	margin: 0.7em;
+  color:#222;
+	margin: 0.5em;
 	display: inline-block;
-	padding: 0.5em;
+	padding: 0.2em;
 	padding-left: 1em;
 	padding-right: 1em;
-	/*border: 1px solid #fcfcfcfcfcfc;*/
-  background-color: #eee;
+	/*border: 1px solid #cccccc;*/
+  background-color: #efefef;
 	cursor:pointer;
     -webkit-animation: move 45s infinite; /* Safari 4+ */
   	-moz-animation:    move 45s infinite; /* Fx 5+ */
@@ -15,7 +16,7 @@
   	border-radius: 1em;
 }
 .existingTag:hover{
-	background-color: #D9EDDE;
+	background-color: #f6f6f6;
 	color:#1E2128;
 }
 #existingTagContainer{

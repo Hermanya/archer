@@ -1,0 +1,40 @@
+.popularTagsPanel{
+	border-radius: 4px;
+	padding: 1em 0;
+ }
+.popularTagsPanel>.popularTagElement{
+	width: 100%;
+	padding: 0 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+.popularTagElement>button{
+	float:right;
+	margin-left: 0.2em;
+	visibility: hidden;
+}
+.popularTagElement:hover>button{
+	visibility: visible;
+	background-color: rgba(0,0,0,0);
+	border-width: 0;
+}
+.popularTagElement:hover{
+	color:#41A38B;
+}
+.popularTagsPanel>span{
+	font-weight: bold;
+	margin-bottom: 0.2em;
+	display: block;
+	color:#aaa;
+	padding: 0 1em;
+}
+.popularTagsContainer{
+	width: initial;
+	border: 1px solid #ddd;
+	margin: 0;
+	padding:1em;
+	position: absolute;
+	border-radius: 4px;
+}
+

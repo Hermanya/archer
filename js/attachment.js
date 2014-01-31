@@ -12,8 +12,8 @@ function createRemoveAttachmentButton(){
     return element;
 }
 function removeAttachmentElement(){
-    if(this.parentNode.title=="")
-        document.querySelector(".fileInput").value="";
+   // if(this.parentNode.title=="")
+    //    document.querySelector(".fileInput").value="";
 	document.querySelector(".attachmentContainer").removeChild(this.parentNode);
 }
 function addAttachment(){
@@ -23,7 +23,8 @@ function addAttachment(){
     {
         match = 'http://' + match;
     }
-    var parser = document.createElement('a');document.querySelector(".fileInput").value="";
+    var parser = document.createElement('a');
+//document.querySelector(".fileInput").value="";
     console.log()
     parser.href =   match;
 
@@ -98,7 +99,7 @@ function getSiteBasicInforation(obj){
          siteMetaHttp.open("GET","api/getSiteMetaData.php?url="+obj.title,true);
          siteMetaHttp.send();
      }
-     document.querySelector(".fileInput").addEventListener("change",handleFileSelect,false);
+     //document.querySelector(".fileInput").addEventListener("change",handleFileSelect,false);
      function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
 

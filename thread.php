@@ -16,13 +16,13 @@
 		break;	
 	}
 	?>
-	<link rel='stylesheet' media='screen and (max-width: 970px)' href='css/main-mobile.css' />
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 
 </head>
 <body>
-	<nav id="top">
+	<nav class="topNav" id="top">
 		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
-		<a href="#" id="settingsButton" onmouseover="this.querySelector('ul').style.display='block';" onmouseout="this.querySelector('ul').style.display='none';">
+		<a href="#" id="settingsButton" >
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 			<ul class="settingsPanel">
 				<li id="changeStyleButton"><span class="glyphicon glyphicon-adjust"></span> style</li>
@@ -35,12 +35,13 @@
 				<button><span class="glyphicon glyphicon-search"></span></button>
 			</form>
 		</nav>
+		<div class="container transparent">
 		<?php 
 		require "../conf.php";
 
 		if(isset($_GET['thread_id'])){
 			$thread_id = intval($_GET['thread_id']);
-			echo '<div class="metaContainer" id="'.$thread_id.'">';
+			echo '<div class="metaContainer fullThread" id="'.$thread_id.'">';
 		}else{
 			echo 'bad try</body></html>';
 			return;
@@ -69,14 +70,15 @@
 		$next_thread_id = $stmt->fetch();
 		$next_thread_id = $next_thread_id[0];
 ?>
-<a href="thread.php?thread_id=<?=$next_thread_id?>" class="nextPage"><span class="glyphicon glyphicon-chevron-right"></span></a>
-<a class="backToThreads" href="<?=$_GET["d"]==1?'discover':'threads'?>.php"><span class="glyphicon glyphicon-chevron-left"></span></a>
-</div>
+			<a class="backToThreads" href="<?=$_GET["d"]==1?'discover':'threads'?>.php" title="back to threads"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<nav class="threadNav">
+			<a class="leftToBottomLink" href="#<?=$thread_id?>" title="to the top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+			<a href="thread.php?thread_id=<?=$next_thread_id?>" class="nextPage" title="next thread"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			<a class="rightToBottomLink" href="#bottom" title="to the bottom"><span class="glyphicon glyphicon-chevron-down"></span></a>
+		</nav>
 <div class="formOutterContainer">
 	<form action="php/newPost.php" id="answerForm" class="postingForm" method="POST" enctype="multipart/form-data" onsubmit="submitAttachments()">
-		<div class="formContainer">
-			<a class="rightToBottomLink" href="#bottom"><span class="glyphicon glyphicon-chevron-down"></span></a>
-			<a class="leftToBottomLink" href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<div class="formContainer newPost">
 
 			<textarea name="post_text" placeholder="ctrl+enter to answer"></textarea><br>
 			<button type="submit">Answer</button>
@@ -86,16 +88,18 @@
 				<button type="button" class="markupButton" title="ctrl+m" id="lined" href="#answerForm"><span class="linedText">l</span></button>
 				<button type="button" class="markupButton" title="ctrl+[" id="hidden" href="#answerForm"><span class="hiddenText">h</span></button>
 			</div>
-			<div class="fileUpload">
+			<!--div class="fileUpload">
 				<input type="file" class="fileInput" name="file">
 				<button><span class="glyphicon glyphicon-picture"></span></button>
-			</div>
+			</div-->
 			<input type="checkbox" title="You won't bring the thread up" class="sage" name="sage"/>
 			<input type="hidden" name="thread_id" value="<?=$thread_id?>" />
 			<input type="hidden" class="attachmentInput" name="attachment" value="">
 			<div class="attachmentContainer"></div>
 		</div>
 	</form>
+</div>
+</div>
 </div>
 <footer class="threadFooter" id="bottom">
 	<button type="button" id="update"><span class="glyphicon glyphicon-refresh"> </span> update</button>
@@ -108,6 +112,8 @@
 <script src="js/loadNewPosts.js"></script>
 <script src="js/style.js"></script>
 <script src="js/attachment.js"></script>
+<script src="js/threadNavigation.js"></script>
+<script src="js/settingsButton.js"></script>
 <script>
 
 

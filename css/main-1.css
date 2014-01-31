@@ -2,6 +2,7 @@ body{
 	font-family: tahoma;
 	background-image: url("../images/brick.png");
 	background-size: 8%;
+	background-repeat: repeat;
 	color:#1E2128;
 }
 

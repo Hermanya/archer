@@ -28,13 +28,13 @@ if(! is_string($_GET["tag"]))
 		break;	
 	}
 	?>
-	<link rel='stylesheet' media='screen and (max-width: 970px)' href='css/main-mobile.css' />
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 
 </head>
 <body>
-	<nav>
+	<nav class="topNav">
 		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
-		<a href="#" id="settingsButton" onmouseover="this.querySelector('ul').style.display='block';" onmouseout="this.querySelector('ul').style.display='none';">
+		<a href="#" id="settingsButton">
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 			<ul class="settingsPanel">
 				<li  id="layoutButton"><span class="glyphicon glyphicon-th"> </span>  layout</li>
@@ -42,27 +42,46 @@ if(! is_string($_GET["tag"]))
 			</ul></a>
 			<a href="threads.php"><span class="glyphicon glyphicon-th-large"> </span>  threads</a>
 			<a href="modifyTags.php"><span class="glyphicon glyphicon-tags"> </span>  tags</a>
+	<!--a href="fundamentals.php"><span class="glyphicon glyphicon-question-sign"></span> fundamentals</a>
 	<a href="donate.php"><span class="glyphicon glyphicon-wrench"></span> complain</a-->
 		<a href="discover.php"><span class="glyphicon glyphicon-globe"></span> discover</a>
 		<form action="search.php" method="get" class="searchElement">
 			<input type="hidden" value="0" name="offset">
-			<input placeholder="tag" type="text" name="tag">
+			<input placeholder="tag" type="text" name="tag" value="<?=$_GET["tag"]?>">
 			<button><span class="glyphicon glyphicon-search"></span></button>
 		</form>
 	</nav>
+
+	<!--form action="php/newThread.php" method="POST" id="newThreadForm" enctype="multipart/form-data">
+		<div class="buttonPanel">
+			<a class="markupButton" id="bold" href="#answerForm"><b>b</b></a>
+			<a class="markupButton" id="italics" href="#answerForm"><em>i</em></a>
+			<a class="markupButton" id="lined" href="#answerForm"><span class="linedText">l</span></a>
+			<a class="markupButton" id="hidden" href="#answerForm"><span class="hiddenText">h</span></a>
+			<a class="markupButton" id="quot" href="#answerForm"><span class="quot">&gt;</span></a>
+		</div>
+		<textarea name="post_text" rows="4" cols="57" placeholder="#Tag this post, otherwise nobody will ever read it!" required></textarea>
+		<input type="file" name="post_pic" required>
+		<button type="submit">Post</button>
+	</form-->
 	<div class="metaContainer">
+		<aside class="sideBar"><h3 style="text-align:center;">Tag-search results:</h3>
+	</aside>
 		<div class="threadContainer" ></div>
 		<?
 		switch($_COOKIE["layout"]){
 			case 1:
 			echo '<div class="threadContainer" ></div>';
 			echo '<div class="threadContainer" ></div>';
+				//$maxPostLength = 140;
 			break;
 
 			case 0:
+				//$maxPostLength = 440;
 			break;
 			default:
 			echo '<div class="threadContainer" ></div>';
+				//$maxPostLength = 240;
 			break;
 
 		}		
@@ -73,8 +92,11 @@ if(! is_string($_GET["tag"]))
 	<script src="js/style.js"></script>
 	<script src="js/layout.js"></script>
 	<script src="js/createThreadPreviewElement.js"></script>
-	<script src="js/replaceMarkup.js"></script>
-	<footer class="threadFooter">
+	<script src="js/replaceMarkupThreadPreview.js"></script>
+	<script src="js/settingsButton.js"></script>
+	<script src="js/sideBarFix.js"></script>
+
+	<footer class="threadsFooter">
 		<button class="pastThreadsButton">past</button>
 	</footer>
 	<script>

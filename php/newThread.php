@@ -1,14 +1,14 @@
 <?php 
 
 require "../../conf.php";
-require "./replaceMarkup.php";
+require "MyDateTime.php";
 /**
 	Check all the input values
 */
 
 	if (! empty($_POST['post_text'])&&is_string($_POST['post_text'])){
 		$raw_text=$_POST['attachment'].$_POST['post_text'];
-		$text=nl2br(htmlentities($raw_text, ENT_QUOTES, 'UTF-8'),false);
+		$text=preg_replace("/\r\n|\n|\r/","<br>",htmlentities($raw_text, ENT_QUOTES, 'UTF-8'));
 		//$text = preg_replace('#</a>#', "", $text);
 		//$text = preg_replace("#<a class='answer' href='#", "", $text);
 	}else{
@@ -48,20 +48,22 @@ require "./replaceMarkup.php";
 /**
 	Create the thread and op-post
 */
-	$date = new DateTime();
+	$date = new MyDateTime();
 	$mysql_command="INSERT INTO `thread` (`thread_id`,`last_update`) VALUES (NULL,".($date->getTimestamp()).")";
 	$stmt=$pdo->prepare($mysql_command);
 	$stmt->execute();
 	$thread_id = $pdo->lastInsertId();
 
 
-	preg_match_all('/(^|\s)\#(\w+[-]?)*/u', $raw_text, $raw_matches, PREG_OFFSET_CAPTURE);
+	preg_match_all('/(^|\s)\#([\pL_]+[-]?)*/u', $raw_text, $raw_matches);
+	
 	$matches = array();
 	$upperMatches = array();
 	$counter = 0;
+	
 	foreach ($raw_matches[0] as $key => $value) {
-		$matches[$counter]=mb_substr(preg_replace( "/(^\s+)|(\s+$)/us", "", $value[0]),1);
-		$upperMatches[$counter]=mb_strtoupper(mb_substr(preg_replace( "/(^\s+)|(\s+$)/us", "", $value[0]),1), 'UTF-8');
+		$matches[$counter]=mb_substr(preg_replace( "/(^\s+)|(\s+$)/u", "", $value),1);
+		$upperMatches[$counter]=mb_strtoupper(mb_substr(preg_replace( "/(^\s+)|(\s+$)/u", "", $value),1), 'UTF-8');
 		$counter++;
 	}
 
@@ -140,6 +142,7 @@ require "./replaceMarkup.php";
 	Find them in the text and check, which ones already exist.
 */
 	$matches = array_unique($matches);
+
 	$mysql_command="SELECT `keyword` FROM `tag` WHERE UPPER(`keyword`) IN (";
 		$tag_values = "";
 		foreach ($upperMatches as $key => $value){
@@ -180,6 +183,7 @@ foreach ($raw_existing_keys as $key => $value) {
 			$counter++;
 		}
 	}
+	var_dump($to_create_keys);
 	if(count($to_create_keys)!==0){
 		$mysql_command="INSERT INTO `tag` (`tag_id`,`keyword`) VALUES ";
 		$tag_values = "";
@@ -258,7 +262,6 @@ $tag_ids = $stmt->fetchAll();
 
 	$stmt=null;
 	$pdo=null;
-
 	header('Location:  ../thread.php?thread_id='.$thread_id);
 
 	exit();

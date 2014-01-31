@@ -1,4 +1,5 @@
 <?php 
+require '../php/MyDateTime.php';
 switch($_COOKIE["layout"]){
 	case 1:
 	$maxPostLength = 140;
@@ -11,7 +12,7 @@ switch($_COOKIE["layout"]){
 	break;
 
 }
-$date = new DateTime();
+$date = new MyDateTime();
 if ( isset($_GET['max']) ){
 	$last_update = intval($_GET['max']);
 	if ($last_update<0) {
@@ -89,7 +90,7 @@ while ($row = $stmt->fetch()){
 	$response.="{\"id\":".$row['thread_id'].",".
 	"\"postId\":".$row['post_id'].",".
 	"\"lastUpdate\":".$row['ts'].",".
-	"\"attachmentType\":".$attachment_type.",".
+	"\"attachmentType\":0,".//.$attachment_type.",".
 	"\"numberOfPosts\":".$row["posts_number"].",".
 	"\"text\":\"".$text."\"".
 	"},";

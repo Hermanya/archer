@@ -6,15 +6,8 @@
 	<link rel="shortcut icon" href="favicon.ico"> 
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="css/popularTags.css">
 	<?php
-	switch($_COOKIE["style"]){
-		case 1:
-		echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
-		break;
-		case 2:
-		echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
-		break;	
-	}
 	switch($_COOKIE["layout"]){
 		case 1:
 		echo '<link type="text/css" rel="stylesheet" href="css/three-columns.css">';
@@ -23,14 +16,25 @@
 		echo '<link type="text/css" rel="stylesheet" href="css/one-column.css">';
 		break;	
 	}
+	switch($_COOKIE["style"]){
+		case 1:
+		echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
+		break;
+		case 2:
+		echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
+		break;	
+	}
 	?>
-	<link rel='stylesheet' media='screen and (max-width: 970px)' href='css/main-mobile.css' />
+	<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 
 </head>
 <body>
-	<nav>
+	<nav class="topNav">
 		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
-		<a href="#" id="settingsButton" onmouseover="this.querySelector('ul').style.display='block';" onmouseout="this.querySelector('ul').style.display='none';">
+		<button href="#" id="composeThread" title="Compose new thread" onclick="">
+			new thread
+		</button>
+		<a href="#" id="settingsButton">
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 			<ul class="settingsPanel">
 				<li  id="layoutButton"><span class="glyphicon glyphicon-th"> </span>  layout</li>
@@ -45,61 +49,68 @@
 			<button><span class="glyphicon glyphicon-search"></span></button>
 		</form>
 	</nav>
-	<div class="formOutterContainer">
-		<form action="php/newThread.php" method="POST" class="newThreadForm postingForm" enctype="multipart/form-data" onsubmit="submitAttachments()">
-			<div class="formContainer">
-				<textarea name="post_text" placeholder="#Tag this post, otherwise nobody will ever read it!" required></textarea>
-				<button type="submit">Post</button>
-				<div class="buttonPanel">
-					<button type="button" class="markupButton" title="ctrl+b" id="bold" href="#answerForm"><b>b</b></button>
-					<button type="button" class="markupButton" title="ctrl+i" id="italics" href="#answerForm"><em>i</em></button>
-					<button type="button" class="markupButton" title="ctrl+m" id="lined" href="#answerForm"><span class="linedText">l</span></button>
-					<button type="button" class="markupButton" title="ctrl+[" id="hidden" href="#answerForm"><span class="hiddenText">h</span></button>
-				</div>
-				<div class="fileUpload">
-					<input type="file" class="fileInput" name="post_pic">
-					<button><span class="glyphicon glyphicon-picture"></span></button>
-				</div>
-				<input type="hidden" class="attachmentInput" name="attachment" value="">
-				<div class="attachmentContainer"></div>
-			</div>
-		</form>
-	</div>
+	
 	<div class="metaContainer">
-		<div class="threadContainer" ></div>
-		<?
-		switch($_COOKIE["layout"]){
-			case 1:
-			echo '<div class="threadContainer" ></div>';
-			echo '<div class="threadContainer" ></div>';
-				//$maxPostLength = 140;
-			break;
-
-			case 0:
-				//$maxPostLength = 440;
-			break;
-			default:
-			echo '<div class="threadContainer" ></div>';
-				//$maxPostLength = 240;
-			break;
-
-		}		
-		?>
-
+		<aside class="sideBar">
+		<div class="newThreadOutterWrapper" onclick="">
+				<div class="newThreadInnerWrapper">
+					<div class="formOutterContainer">
+						<form action="php/newThread.php" method="POST" class="newThreadForm postingForm" enctype="multipart/form-data" onsubmit="submitAttachments()">
+							<div class="formContainer newThread">
+								<textarea name="post_text" placeholder="#Tag this post, otherwise nobody will ever read it!" required></textarea>
+								<button type="submit"><span style"width: 12px;height: 6px;">Post</span></button>
+								<div class="buttonPanel">
+									<button type="button" class="markupButton" title="ctrl+b" id="bold" href="#answerForm"><b>b</b></button>
+									<button type="button" class="markupButton" title="ctrl+i" id="italics" href="#answerForm"><em>i</em></button>
+									<button type="button" class="markupButton" title="ctrl+m" id="lined" href="#answerForm"><span class="linedText">l</span></button>
+									<button type="button" class="markupButton" title="ctrl+[" id="hidden" href="#answerForm"><span class="hiddenText">h</span></button>
+								</div>
+					<!--div class="fileUpload">
+						<input type="file" class="fileInput" name="post_pic">
+						<button><span class="glyphicon glyphicon-picture"></span></button>
+					</div-->
+					<input type="hidden" class="attachmentInput" name="attachment" value="">
+					<div class="attachmentContainer"></div>
+				</div>
+			</form>
+		</div>
 	</div>
+</div>
+<div class="popularTagsPanel">
+	<span>Popular tags:</span>
+</div>
+</aside>
+<div class="threadContainer" ></div>
+<?
+switch($_COOKIE["layout"]){
+	case 1:
+	echo '<div class="threadContainer" ></div>';
+	echo '<div class="threadContainer" ></div>';
+	break;
+	default:
+	break;
 
-	<script>
-		
-	</script>
-	<footer class="threadFooter">
-		<button class="pastThreadsButton">past</button>
-	</footer>
-	<script src="js/style.js"></script>
-	<script src="js/layout.js"></script>
-	<script src="js/markup.js"></script>
-	<script src="js/attachment.js"></script>
-	<script src="js/createThreadPreviewElement.js"></script>
-	<script src="js/replaceMarkup.js"></script>
-	<script src="js/loadNewThreads.js"></script>
+}		
+?>
+
+</div>
+
+<script>
+
+</script>
+<footer class="threadsFooter">
+	<button class="pastThreadsButton">past</button>
+</footer>
+<script src="js/style.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/markup.js"></script>
+<script src="js/attachment.js"></script>
+<script src="js/createThreadPreviewElement.js"></script>
+<script src="js/replaceMarkupThreadPreview.js"></script>
+<script src="js/loadNewThreads.js"></script>
+<script src="js/popularTags.js"></script>
+<script src="js/settingsButton.js"></script>
+<script src="js/sideBarFix.js"></script>
+<script src="js/composeThread.js"></script>
 </body>
 </html>

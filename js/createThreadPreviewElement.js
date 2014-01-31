@@ -14,6 +14,7 @@ function createThreadPreviewElement(obj){
 	divPost = document.createElement("div");
 	divPost.setAttribute("id",obj.id);
 	element.appendChild(divPost);
+	
 	switch(obj.attachmentType){
 		case 1:
 		/*
@@ -23,7 +24,7 @@ function createThreadPreviewElement(obj){
 		divPost.appendChild(element);*/
 		
 		element = document.createElement("div");
-		element.style.background="url('content/"+obj.id+"/resized/"+obj.postId+"') 50% 50% no-repeat";
+		element.style.backgroundImage="url('content/"+obj.id+"/resized/"+obj.postId+"')";
 		element.setAttribute("class","threadImage");
 		divPost.appendChild(element);
 		break;
@@ -31,14 +32,15 @@ function createThreadPreviewElement(obj){
 		break;
 	}
 	var pelement = document.createElement("p");
-	obj.text=replaceMarkup(obj.text);
+	//obj.text=replaceMarkup(obj.text);
 	pelement.innerHTML = obj.text;
 	divPost.appendChild(pelement);
 	if(obj.attachmentType==0){
 		if(pelement.querySelector("img")){
 			var previewImage = document.createElement("div");
 			previewImage.setAttribute("class","threadImage");
-			previewImage.style.background="url('"+pelement.querySelector("img").getAttribute("src")+"') 50% 50% no-repeat";
+			console.log("shit");
+			previewImage.style.backgroundImage="url('"+pelement.querySelector("img").getAttribute("src")+"')";
 			divPost.insertBefore(previewImage,pelement);
 			var img = pelement.querySelector("img");
 			pelement.removeChild(img.parentNode);
@@ -59,10 +61,11 @@ function createThreadPreviewElement(obj){
 	function getParentContainer(){
 		var containers = document.getElementsByClassName("threadContainer");
 		var parent = containers[0];
+		var sideBarHeight = document.getElementsByClassName("sideBar")[0].scrollHeight;
 			for (var j = 0; j < containers.length; j++) {
-				if (containers[j].scrollHeight < parent.scrollHeight){
-					parent = containers[j];
-				}
+					if (containers[j].scrollHeight <= parent.scrollHeight){
+						parent = containers[j];
+					}
 			};
 			return parent;
 };

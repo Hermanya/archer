@@ -27,7 +27,7 @@ function replaceMarkup(text){
                 // images
                 if(parser.pathname.match(/\.(png|jpg|PNG|JPG|gif|GIF)$/))
                 {   
-                    return '<a href="'+ match + '" target="_blank"><div  class="postImage" style="background:url(\''+match+'\') 50% 50% no-repeat;"  title="'+ parser.hostname + '"></div></a>';
+                    return '<a href="'+ match + '" target="_blank"><div  class="postImage" style="background-image:url(\''+match+'\');"  title="'+ parser.hostname + '"></div></a>';
                 }
                 // youtube
                 if((parser.hostname.indexOf('www.youtube.com')==0

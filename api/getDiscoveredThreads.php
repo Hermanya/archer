@@ -1,4 +1,6 @@
 <?php 
+require '../php/MyDateTime.php';
+
 switch($_COOKIE["layout"]){
 	case 1:
 	$maxPostLength = 140;
@@ -11,7 +13,7 @@ switch($_COOKIE["layout"]){
 	break;
 
 }
-$date = new DateTime();
+$date = new MyDateTime();
 if ( isset($_GET['max']) ){
 	$last_update = intval($_GET['max']);
 	if ($last_update<0) {

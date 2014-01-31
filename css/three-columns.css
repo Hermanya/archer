@@ -1,3 +1,6 @@
 .threadContainer{
 	width: 33%;
 }
+.threadImage{
+	border-bottom:#dfdfdf solid 1px;
+}

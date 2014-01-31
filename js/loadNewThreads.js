@@ -2,7 +2,7 @@ var rehttp=new XMLHttpRequest(), numberOfNewPosts=0;
 		rehttp.onreadystatechange=function()
 		{
 			if (rehttp.readyState==4 && rehttp.status==200)
-			{ 
+			{ 	console.log(rehttp.responseText.split("<!--")[0]);
 				postsArray = JSON.parse(rehttp.responseText.split("<!--")[0]);
 				for (var i = postsArray.length-1; i >=0 ; i--) {
 					createThreadPreviewElement(postsArray[i]);
