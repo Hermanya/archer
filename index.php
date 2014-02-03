@@ -18,16 +18,18 @@
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
 	<?php
-		if($_COOKIE["style"]==1)
-			echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';	
+	//	if($_COOKIE["style"]==1)
+			echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';	
 	?>
 	<link type="text/css" rel="stylesheet" href="css/modify.css">
 	<link type="text/css" rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<div class="topNavWrap">
 <nav class="topNav">
 	<span id="welcomeMessage">Welcome to an anonymous forum!</span>
 </nav>
+</div>
 <div class="container">
 <iframe src="//player.vimeo.com/video/79016440?title=0&amp;byline=0&amp;portrait=0&amp;color=41a38b&amp;autoplay=0" class="welcomeVideo" width="837" height="470" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <h2 id="interests">What are you interested in?</h2>

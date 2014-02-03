@@ -12,7 +12,10 @@
 		echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
 		break;
 		case 2:
+		break;
+		default:
 		echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
+		echo '<script src="js/audio.js"></script>';
 		break;	
 	}
 	?>
@@ -20,8 +23,9 @@
 
 </head>
 <body>
+<div class="topNavWrap">
 	<nav class="topNav" id="top">
-		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
+		<span id="logo"><a href="threads.php"><image  src="images/giraffe.jpg"></a></span>
 		<a href="#" id="settingsButton" >
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 			<ul class="settingsPanel">
@@ -35,7 +39,8 @@
 				<button><span class="glyphicon glyphicon-search"></span></button>
 			</form>
 		</nav>
-		<div class="container transparent">
+		</div>
+		<div class="threadOutterContainer transparent">
 		<?php 
 		require "../conf.php";
 
@@ -114,6 +119,7 @@
 <script src="js/attachment.js"></script>
 <script src="js/threadNavigation.js"></script>
 <script src="js/settingsButton.js"></script>
+
 <script>
 
 

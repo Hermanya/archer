@@ -12,7 +12,10 @@
 				echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
 				break;
 			case 2:
+				break;
+			default:
 				echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
+				echo '<script src="js/audio.js"></script>';
 				break;	
 		}
 	?>
@@ -21,9 +24,11 @@
 	<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 </head>
 <body>
+<div class="topNavWrap">
 <nav class="topNav">
 	<span id="welcomeMessage">What are You interested in?:</span>
 </nav>
+</div>
 <div class="container">
 	
 <div id="existingTagContainer">

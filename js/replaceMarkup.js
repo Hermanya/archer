@@ -1,8 +1,6 @@
 function replaceMarkup(text){
-    text = text.replace(/^#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
-    text = text.replace(/\s#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"&nbsp;<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
     text = text.replace(/(&gt;){2}([0-9]+)/g,"<a class=\"answer\" href=\"#$2\">>>$2</a>");
-    text = text.replace(/&gt;(.*)/g,"<span class=\"quot\">>$1</span>");
+    text = text.replace(/&gt;(.*)<br>/g,"<span class=\"quot\">>$1</span><br>");
     text = text.replace(/\*{2}(.*?)\*{2}/g,"<strong>$1</strong>");
     text = text.replace(/\[b\]/g,"<strong>");
     text = text.replace(/\[\/b\]/g,"</strong>");
@@ -42,12 +40,15 @@ function replaceMarkup(text){
                             break;
                         }
                     };
-                    return '<img class="postImage youtubePreviewPicture" src="http://img.youtube.com/vi/'+vid+'/hqdefault.jpg" onclick="showVideo(this);" title="'+vid+'">';
+                    return '<div class="postImage youtubePreviewPicture" style="background-image:url(http://img.youtube.com/vi/'+vid+'/sddefault.jpg);" onclick="showVideo(this);" title="'+vid+'"></div>';
                     //return '<iframe class="embedded-video" src="http://www.youtube.com/embed/'+vid+'" width="640" height="360" allowfullscreen></iframe>';
                 }
                 //links
                 return '<a href="'+match+'" target="_blank">'+parser.hostname+'</a>';
     });
+    text = text.replace(/^#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
+    text = text.replace(/\s#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"&nbsp;<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
+    text = text.replace(/<br>#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"&nbsp;<br><a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
     return text;
 }
 function showVideo(thisElement){

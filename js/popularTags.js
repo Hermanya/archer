@@ -2,6 +2,7 @@ function createPopularTagElement(obj){
 	var element = document.createElement("div");
 	element.setAttribute("class","popularTagElement");
 	element.setAttribute("tagId",obj.tagId);
+	//element.setAttribute("href","search.php?offset=0&tag="+obj.keyword);
 	element.appendChild(document.createTextNode(obj.keyword));
 	element.appendChild(createAddPopularTagButton());
 	element.appendChild(createRemovePopularTagButton());
@@ -62,7 +63,7 @@ var pthttp=new XMLHttpRequest(), numberOfNewPosts=0;
 					createPopularTagElement(tagsArray[i]);
 				};
 				if (tagsArray.length == 0)
-					document.querySelector(".popularTagsContainer").style.display="none";
+					document.querySelector(".popularTagsPanel").style.display="none";
 
 			}
 		}                    

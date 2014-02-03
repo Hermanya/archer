@@ -1,67 +1,75 @@
 body{
-	font-family: tahoma;
+	font-family: terminal;
 	background-color: #1b1b1b;
-  color:#eee;
-  background-image: url('../images/background-image-dark.jpg');
-  background-size: 300px;
-  background-repeat: repeat-x;
+  color: #aaffc3;
+  background-image: url('../images/terminal.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@font-face
+{
+font-family: terminal;
+src: url(fonts/Terminal.ttf);
 }
 button,input{
-  border: solid 1px #202020;
-  background-color: #222;
-  border-radius: 3px;
-  padding: 0.5em;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  color:#eee;
-}
-.preview{
-	color:#eee;
-}
-.hiddenText{
-	background-color: #eee;
+  border-color: #aaffc3 !important;
+  background-color: rgba(0,0,0,0) !important;
   color:#eee !important;
 }
-.topNav{
-  	border-bottom: 1px solid #202020;
-    background-color: #01634B;
+.preview{
+	color:#aaffc3;
 }
-.currentPage {
-background-color: #066851;
+.hiddenText{
+	background-color: #aaffc3;
+  color:#aaffc3 !important;
+}
+.topNavWrap{
+  background-color: initial;
+  border:none;
+}
+.topNav{
+    border: 1px solid #aaffc3;
+    border-top-width: 0;
+    background-color: #285737;
+    border-radius: 0;
+}
+.topNav > a {
+  color:#aaffc3  !important;
+}
+.topNav >a:hover{
+  text-shadow: 1px 1px 10px #aaffc3;
 }
 .metaContainer,.threadFooter,.formOutterContainer{
-  	border-right: 1px solid #202020;
-	border-left: 1px solid #202020;
-	background-color: rgba(32,32,32,0.6);
-	background-size: 21%;
-	border-top: 1px solid #202020;
+  	border-color: #aaffc3;
+		background-color: rgba(0,0,0,0);
+	 
 }
 
-.container,.popularTagsPanel{
-	background-color: #222;
-  	border-right: 1px solid #202020;
-  	border-left: 1px solid #202020;
+.container,.popularTagsPanel,.linksPanel,.threadFooter,.threadsFooter{
+	background-color: rgba(0,0,0,0);
+  	border-color:  #aaffc3;
 }
 
 .post,.formContainer,.answersToContainer>div,.answersFromContainer>div,.expandedPost{
-  	border: 1px solid #202020;
-  	background-color: #262626;
+  	border-color: #aaffc3;
+  	background-color: rgba(0,0,0,0);
 
 }
 .threadOpPost{
-  	background-color: #262626;
-  	border: 1px solid #202020;
+  	background-color: rgba(0,0,0,0);
+  	border-color: #aaffc3;
 }
 .threadOpPost:hover{
-  background-color: #323232;
+  background-color: rgba(255,255,255,0.1);
 }
 .threadOpPost > div > p{
-	color:#eee;
+	color:#aaffc3;
 }
 textarea{
-	border: 1px solid #202020;
-  	background-color: #262626;
-  	color:#eee;
+	border-color: #aaffc3;
+  	background-color: rgba(0,0,0,0);
+  	color:#aaffc3;
 }
 textarea:focus{
   background-color: #000;
@@ -69,29 +77,39 @@ textarea:focus{
 .backToThreads,.nextPage,.previousPage,.rightToBottomLink,.leftToBottomLink{
 }
 .tagElement{
-  margin-left: 1em;
-  background-color: #F3EBC8;
-  display: inline-block;
-  padding: 0.3em;
-  border-radius: 2em;
-  padding-left: 1em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #E6E6E8;
-  color:#333;
+  background-color: rgba(0,0,0,0) !important;
+  border-color: #aaffc3;
+  color: #aaffc3;
+  border-bottom-left-radius: 0 !important;
 }
 .expandedPost{
-  border-color: #202020;
+  border-color: #aaffc3;
 }
 .expandedPost+.post{
-  border-color: #202020;
+  border-color: #aaffc3;
 }
 .threadNav>a,.backToThreads{
-  color:#222;
-  }
-  .answersToContainer>div,.answersFromContainer>div{
-  font-size: 0.8em;
-  background-color: #202026;
+  color:#aaffc3 !important;
+}
+.threadNav>a:hover,.backToThreads:hover{
+  background-color:rgba(0,0,0,0) !important; 
+  text-shadow: 1px 1px 21px #aaffc3;
+}
+.answersToContainer>div,.answersFromContainer>div{
+  background-color: rgba(0,0,0,0);
 }
 .postImage,.threadImage{
-  border: solid 1px #202020;
+  border-color: #aaffc3;
+}
+.tag{
+  color:#eee;
+}
+.searchElement > button {
+margin-left: -3em;
+}
+.youtubePreviewPicture{
+  border-bottom-color:#f66;
+}
+.preview{
+  background-color: rgba(0,0,0,0.9);
 }

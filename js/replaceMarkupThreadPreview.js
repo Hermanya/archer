@@ -1,8 +1,6 @@
 function replaceMarkup(text){
-    text = text.replace(/^#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
-    text = text.replace(/\s#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"&nbsp;<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
     text = text.replace(/(&gt;){2}([0-9]+)/g,"<a class=\"answer\" href=\"#$2\">>>$2</a>");
-    text = text.replace(/&gt;(.*)/g,"<span class=\"quot\">>$1</span>");
+    text = text.replace(/&gt;(.*)<br>/g,"<span class=\"quot\">>$1<br></span>");
     text = text.replace(/\*{2}(.*?)\*{2}/g,"<strong>$1</strong>");
     text = text.replace(/\[b\]/g,"<strong>");
     text = text.replace(/\[\/b\]/g,"</strong>");
@@ -48,5 +46,7 @@ function replaceMarkup(text){
                 //links
                 return '<a href="'+match+'" target="_blank">'+parser.hostname+'</a>';
     });
+    text = text.replace(/^#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
+    text = text.replace(/\s#(([^(\.,!\?\+\)\("'\&\$\^#\n\s\r\f<>)])+)/g,"&nbsp;<a class=\"tag\" href=\"search.php?offset=0&tag=$1\">#$1</a>");
     return text;
 }

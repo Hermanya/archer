@@ -13,7 +13,10 @@
 					echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
 					break;
 				case 2:
+				break;
+				default:
 					echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
+					echo '<script src="js/audio.js"></script>';
 					break;	
 			}
 			switch($_COOKIE["layout"]){
@@ -25,8 +28,9 @@
 		<link rel='stylesheet' media='screen and (max-width: 600px)' href='css/main-mobile.css' />
 	</head>
 	<body>
+	<div class="topNavWrap">
 	<nav class="topNav">
-		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
+		<span id="logo"><a href="threads.php"><image  src="images/giraffe.jpg"></a></span>
 					<a href="#" id="settingsButton" >
 			<span class="glyphicon glyphicon-cog"> </span>  settings
 				<ul class="settingsPanel">
@@ -42,7 +46,7 @@
 					<button><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 	</nav>
-
+	</div>
 	<!--form action="php/newThread.php" method="POST" id="newThreadForm" enctype="multipart/form-data">
 		<div class="buttonPanel">
 			<a class="markupButton" id="bold" href="#answerForm"><b>b</b></a>
@@ -65,6 +69,9 @@
 				<button id="proceed" ><span class="glyphicon glyphicon-ok"></span></button>
 			</div>
 			<br>
+		</div>
+		<div class="linksPanel">
+			2013 <a href="https://twitter.com/Hermanhasawish" target="_blank">@Hermanhasawish</a> <a href="https://github.com/Hermanya/archer" target="_blank">GitHub</a>
 		</div>
 	</aside>
 	<div class="threadContainer" >
@@ -91,7 +98,7 @@
 	<script src="js/replaceMarkupThreadPreview.js"></script>
 	<script src="js/settingsButton.js"></script>
 	<script src="js/sideBarFix.js"></script>
-
+	
 	<script>
 		var rehttp=new XMLHttpRequest(), numberOfNewPosts=0;
 		rehttp.onreadystatechange=function()

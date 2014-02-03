@@ -1,0 +1,85 @@
+body{
+	font-family: tahoma;
+	background-color: #1b1b1b;
+  color:#eee;
+  background-image: url('../images/background-image-dark.jpg');
+  background-size: 300px;
+  background-repeat: repeat-x;
+}
+button,input{
+  border: solid 1px #202020;
+  background-color: #222;
+  color:#eee;
+}
+.preview{
+	color:#eee;
+}
+.hiddenText{
+	background-color: #eee;
+  color:#eee !important;
+}
+.topNav{
+  	border-bottom: 1px solid #202020;
+    background-color: #01634B;
+}
+.currentPage {
+background-color: #066851;
+}
+.metaContainer,.threadFooter,.formOutterContainer{
+  	border-right: 1px solid #202020;
+	border-left: 1px solid #202020;
+	background-color: rgba(32,32,32,0.6);
+	background-size: 21%;
+	border-top: 1px solid #202020;
+}
+
+.container,.popularTagsPanel,.linksPanel,.threadFooter,.threadsFooter{
+	background-color: #222;
+  	border-color:  #202020;
+}
+
+.post,.formContainer,.answersToContainer>div,.answersFromContainer>div,.expandedPost{
+  	border: 1px solid #202020;
+  	background-color: #262626;
+
+}
+.threadOpPost{
+  	background-color: #262626;
+  	border: 1px solid #202020;
+}
+.threadOpPost:hover{
+  background-color: #323232;
+}
+.threadOpPost > div > p{
+	color:#eee;
+}
+textarea{tag
+	border: 1px solid #202020;
+  	background-color: #262626;
+  	color:#eee;
+}
+textarea:focus{
+  background-color: #000;
+}
+.backToThreads,.nextPage,.previousPage,.rightToBottomLink,.leftToBottomLink{
+}
+.tagElement{
+  background-color: #F3EBC8;
+  border-bottom: 1px solid #E6E6E8;
+  color:#333;
+}
+.expandedPost{
+  border-color: #202020;
+}
+.expandedPost+.post{
+  border-color: #202020;
+}
+.threadNav>a,.backToThreads{
+  color:#222;
+  }
+  .answersToContainer>div,.answersFromContainer>div{
+  background-color: #202026;
+}
+.postImage,.threadImage{
+  border: solid 1px #202020;
+}

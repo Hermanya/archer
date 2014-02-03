@@ -21,7 +21,10 @@
 		echo '<link type="text/css" rel="stylesheet" href="css/main-1.css">';
 		break;
 		case 2:
+		break;
+		default:
 		echo '<link type="text/css" rel="stylesheet" href="css/main-2.css">';
+		echo '<script src="js/audio.js"></script>';
 		break;	
 	}
 	?>
@@ -29,8 +32,9 @@
 
 </head>
 <body>
+<div class="topNavWrap">
 	<nav class="topNav">
-		<span id="logo"><a href="threads.php"><image  src="images/giraffe.png"></a></span>
+		<span id="logo"><a href="threads.php"><image  src="images/giraffe.jpg"></a></span>
 		<button href="#" id="composeThread" title="Compose new thread" onclick="">
 			new thread
 		</button>
@@ -49,7 +53,7 @@
 			<button><span class="glyphicon glyphicon-search"></span></button>
 		</form>
 	</nav>
-	
+	</div> 
 	<div class="metaContainer">
 		<aside class="sideBar">
 		<div class="newThreadOutterWrapper" onclick="">
@@ -79,6 +83,9 @@
 <div class="popularTagsPanel">
 	<span>Popular tags:</span>
 </div>
+<div class="linksPanel">
+			2013 <a href="https://twitter.com/Hermanhasawish" target="_blank">@Hermanhasawish</a> <a href="https://github.com/Hermanya/archer" target="_blank">GitHub</a>
+		</div>
 </aside>
 <div class="threadContainer" ></div>
 <?

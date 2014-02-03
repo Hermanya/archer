@@ -37,7 +37,6 @@ user-select: none;
 #welcomeMessage{
   padding: 0.2em;
   font-size: 2em;
-  color: #fdfdfd;
   font-weight: lighter;
   position: relative;
   display: inline-block;
@@ -65,7 +64,7 @@ user-select: none;
 }
 
 #plusButton,#proceed{
-  margin-left: -2em;
+  margin-left: -2.8em;
   background-color: #3DA1CC;
   color: #fdfdfd;
   border-bottom-left-radius: 0;
